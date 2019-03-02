@@ -43,7 +43,7 @@ public class mongo : MonoBehaviour
         client = new MongoClient(connectionString);
         server = client.GetServer();
         database = server.GetDatabase("cms");
-        playercollection = database.GetCollection<BsonDocument>("posts");
+        playercollection = database.GetCollection<BsonDocument>("postas");
         foreach (var document in playercollection.FindAll())
         {
             Debug.Log("4. SELECT ALL DOCS: \n" + document["Red"]);
@@ -92,7 +92,7 @@ public class mongo : MonoBehaviour
     void Update_Cube()
 
     {
-        playercollection = database.GetCollection<BsonDocument>("posts");
+        playercollection = database.GetCollection<BsonDocument>("postas");
         print(Time.time);
 
     }
